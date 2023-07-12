@@ -5,7 +5,6 @@ services:
 
   mongo:
     image: mongo
-    container_name: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -16,7 +15,7 @@ services:
       - 27017:27017
   mongo-express:
     image: mongo-express
-    container_name: mongo-express
+    restart: always
     ports:
       - 8081:8081
     depends_on: 
